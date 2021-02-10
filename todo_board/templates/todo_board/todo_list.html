@@ -1,0 +1,11 @@
+{% extends 'todo_main/common/header.html' %}
+{% block main %}
+
+<div class="col-md-12">
+    <div class="container">
+        {% for list in todo_list%}
+            <div class="list-group-item"> <input type="checkbox" name={{list.title}} value={{list.title}}>{{list.title}} </div>
+        {% endfor%}
+    </div>
+</div>
+{% endblock main %}
