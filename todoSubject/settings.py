@@ -141,3 +141,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 import pymysql
 pymysql.install_as_MySQLdb()
+
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
