@@ -23,6 +23,6 @@ urlpatterns = [
     path('index/', include('todo_main.urls')),
     path('home/', include('todo_main.urls')),
 
-    #board app
+    # board app
     path('board/', include('todo_board.urls')),
 ]

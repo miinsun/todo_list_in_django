@@ -1,5 +1,6 @@
 {% extends 'todo_main/common/header.html' %}
 {% block main %}
+{% load static %}
 
 <div class="col-md-12">
     <div class="container">
@@ -7,5 +8,12 @@
             <div class="list-group-item"> <input type="checkbox" name={{list.title}} value={{list.title}}>{{list.title}} </div>
         {% endfor%}
     </div>
+</div>
+
+<div class="col-md-12">
+      <button type="button" class="btn btn-primary" onclick="location.href='{% url 'todo_board:todo_board_insert' %} '">
+            일정추가
+      </button>
+      <p>* 마우스 드래그로 우선순위 변경이 가능합니다</p>
 </div>
 {% endblock main %}

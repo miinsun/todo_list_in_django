@@ -1,34 +1,32 @@
-{% load static %}
 <html lang="ko">
+
+    {% load static %}
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--Fontawesom-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
 
         <!--Animated CSS-->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/animate.min.css' %}">
 
         <!-- Bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <!--Bootstrap Carousel-->
+        <link type="text/css" rel="stylesheet" href="{% static 'css/carousel.css' %}" />
 
         <link rel="stylesheet" href="{% static 'css/isotope/style.css' %}">
 
         <!--Main Stylesheet-->
         <link href="{% static 'css/style.css' %}" rel="stylesheet">
-
         <!--Responsive Framework-->
         <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <script>
 
 
@@ -63,6 +61,7 @@
             </div>
             <ul class="nav navbar-nav">
               <li><a href="{% url 'todo_main:todo_main' %}">todo main</a></li>
+              <li><a href="{% url 'todo_board:todo_board' %}">todo list</a></li>
             </ul>
           </div>
         </nav>
