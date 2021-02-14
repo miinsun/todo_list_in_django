@@ -5,14 +5,17 @@
 <div class="col-md-12">
     <div class="container">
         {% for list in todo_list%}
-            <div class="list-group-item"> <input type="checkbox" name={{list.title}} value={{list.title}}>{{list.title}} </div>
+            <div class="list-group-item"> <input type="checkbox" name={{list.title}} value={{list.title}}>
+                <a href="{% url 'todo_board:todo_board_detail' pk=list.no %}">{{list.title}}
+                </a>
+            </div>
         {% endfor%}
     </div>
 </div>
 
 <div class="col-md-12">
       <button type="button" class="btn btn-primary" onclick="location.href='{% url 'todo_board:todo_board_insert' %} '">
-            일정추가
+            글쓰기
       </button>
       <p>* 마우스 드래그로 우선순위 변경이 가능합니다</p>
 </div>
