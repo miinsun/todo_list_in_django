@@ -3,6 +3,8 @@
     {% load static %}
 
     <head>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,10 +31,24 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <script>
 
-
+        $(document).ready(function() {
+        var movementStrength = 25;
+        var height = movementStrength / $(window).height();
+        var width = movementStrength / $(window).width();
+        $("#top-image").mousemove(function(e){
+                  var pageX = e.pageX - ($(window).width() / 2);
+                  var pageY = e.pageY - ($(window).height() / 2);
+                  var newvalueX = width * pageX * -1 - 25;
+                  var newvalueY = height * pageY * -1 - 50;
+                  $('#top-image').css("background-position", newvalueX+"px     "+newvalueY+"px");
+        });
+        });
 
         </script>
 		<style type="text/css">
+            body {
+    background-color: rgba(77, 94, 179, 0.014);
+            }
             #container {
                 min-width: 310px;
                 max-width: 800px;
@@ -49,6 +65,13 @@
             .list-group-item{
                 width : 40%;
             }
+
+            *{
+              font-family: 'Song Myung', serif;
+              font-size: 110%;
+            }
+
+
 		</style>
 
 
@@ -60,7 +83,6 @@
               <a class="navbar-brand" href="#"></a>
             </div>
             <ul class="nav navbar-nav">
-              <li><a href="{% url 'todo_main:todo_main' %}">todo main</a></li>
               <li><a href="{% url 'todo_board:todo_board' %}">todo list</a></li>
             </ul>
           </div>
